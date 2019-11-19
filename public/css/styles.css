@@ -1,0 +1,135 @@
+.header{
+    position: sticky;
+    height: 70px;
+    overflow: hidden;
+    background-color: #4A6C6F;
+    filter: drop-shadow(0px 1px 6px rgba(41, 63, 65, 1));
+    
+}
+
+.toplogo img{
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+    height:50px;
+}
+
+.searchnav {
+    display: flex;
+    align-items: center;
+    float: right;
+}
+.searchnav input{
+    margin-top: 3%;
+    padding-left: 5%;
+    border-radius: 25px;
+    border: none;
+    width: 250px;
+    height: 35px;
+    font-size: 12px;
+}
+.searchnav img{
+    position: absolute;
+    height: 30px;
+    top : 30%;
+    left: 230px;
+
+}
+.poster{
+    height: 600px;
+}
+
+.poster img{
+    margin-top: 80%;
+    height: 300px;
+}
+
+.poster1{
+    margin-top: 8%;
+}
+
+.poster1 button{
+    border-radius: 25px;
+    background-color: #846075;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+}
+
+.h1{
+	overflow: visible;
+	width: 927px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Tahoma;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 60px;
+	color: rgba(255,255,255,1);
+}
+
+.h2{
+	overflow: visible;
+	width: 927px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Tahoma;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 15px;
+	color: rgba(255,255,255,1);
+}
+
+.peran{
+    height: 600px;
+}
+
+.peran button{
+    border-radius: 25px;
+    background-color: #846075;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+}
+
+.box{
+    background-color: #436164;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    height: 400px;
+}
+
+.box img{
+    margin-top: 20px;
+    margin-left: 4px;
+    width: 25%;
+}
+
+.box p{
+    margin-top: 50px;
+    margin-left: 4px;
+    text-align: left;
+    color: rgba(255,255,255,1);
+}
+
+.title{
+    margin-top: 5%;
+    font-size: 40px;
+	color: rgba(255,255,255,1);
+}

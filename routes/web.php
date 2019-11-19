@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::get('/admin','AdminController@index');
 Route::get('/register','AuthController@getRegister')->middleware('guest')->name('register');
