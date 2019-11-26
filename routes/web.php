@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('barang');
 });
 Route::get('/admin','AdminController@index');
 Route::get('/register','AuthController@getRegister')->middleware('guest')->name('register');
@@ -23,3 +23,5 @@ Route::get('/home',function(){
     return view('home');
 })->middleware('auth')->name('home');
 Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');
+Route::get('/barang','BarangController@index')->middleware('auth');
+Route::post('/barang','BarangController@store')->middleware('auth')->name('addbarang');

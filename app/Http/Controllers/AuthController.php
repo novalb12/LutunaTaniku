@@ -21,6 +21,7 @@ class AuthController extends Controller
          {
              return redirect()->back();
          }
+
          return redirect()->route('home');
     }
     public function getRegister()
@@ -34,12 +35,16 @@ class AuthController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6|confirmed' //field_confirmation
         ]);
-        User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password)
         ]);
-        return redirect()->back();
+
+        //user login
+        auth()->loginUsingId($user->id);
+
+        return redirect()->route('home');
 
     }
 
