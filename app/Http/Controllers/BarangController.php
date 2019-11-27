@@ -9,6 +9,7 @@ class BarangController extends Controller
 {
     public function index()
     {
+
         return view('barang');
     }
 
@@ -25,17 +26,25 @@ class BarangController extends Controller
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
-            $file->move('uploads/barang',$filename);
+            //$file->move('uploads/barang/',$filename);
             $barang->imgfile = $filename;
+            $barang->imgfile = request()->image->store('uploads','public');
+            //dd($barang->imgfile);
         }
         else
         {
-            return $request;
+             dd($request);
             $barang->imgfile = '';
         }
 
         $barang->save();
 
         return view('barang')->with('barang',$barang);
+    }
+
+    public function tes()
+    {
+        $barang = Barang::all();
+        return view('tes')->with('barang',$barang);
     }
 }

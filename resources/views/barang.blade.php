@@ -12,7 +12,8 @@
   </head>
   <body>
     <div class="container">
-        <form action ="{{ route('addbarang') }}" method="POST">
+        <div class="jumbotron">
+        <form action ="{{ route('addbarang') }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="input-group">
                 <div class="custom-file">
@@ -30,6 +31,7 @@
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Save Data</button>
         </form>
+        </div>
     </div>
 
   </body>
