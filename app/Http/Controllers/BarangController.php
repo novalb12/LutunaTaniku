@@ -42,9 +42,9 @@ class BarangController extends Controller
         return view('barang')->with('barang',$barang);
     }
 
-    public function tes()
+    public function penjual()
     {
         $barang = Barang::all();
-        return view('tes')->with('barang',$barang);
+        return view('penjual')->with('barang',$barang);
     }
 }

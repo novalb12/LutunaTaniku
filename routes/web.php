@@ -25,4 +25,4 @@ Route::get('/home',function(){
 Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');
 Route::get('/barang','BarangController@index')->middleware('auth');
 Route::post('/barang','BarangController@store')->middleware('auth')->name('addbarang');
-Route::get('/tes','BarangController@tes');
+Route::get('/penjual','BarangController@penjual');
