@@ -15,9 +15,11 @@
             </div>
             <div class="col-5"></div>
             <div class="col-4 searchnav">
-                <form action="/action_page.php">
-                    <input type="text" placeholder="Cari produk atau toko..." name="search">
+                <form action="/barang/cari" method ="GET">
+                    <input type="text" name="cari" placeholder="Cari produk atau toko..." value="{{old('cari')}}">
+                    <button>
                     <img src="{{asset('img/Search_icon.png')}}" />
+                    </button>
                 </form>
             </div>
         </div>

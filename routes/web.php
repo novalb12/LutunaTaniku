@@ -26,3 +26,4 @@ Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout'
 Route::get('/barang','BarangController@index')->middleware('auth');
 Route::post('/barang','BarangController@store')->middleware('auth')->name('addbarang');
 Route::get('/penjual','BarangController@penjual');
+Route::get('/barang/cari','BarangController@cari');

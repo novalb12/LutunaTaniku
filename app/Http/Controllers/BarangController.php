@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Barang;
+use Carbon\Carbon;
+use Image;
+use File;
 
 class BarangController extends Controller
 {
@@ -26,10 +29,12 @@ class BarangController extends Controller
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
+            $location=public_path('image/'.$filename);
+            Image::make($file)->resize(300,300)->save($location);
             //$file->move('uploads/barang/',$filename);
             $barang->imgfile = $filename;
-            $barang->imgfile = request()->image->store('uploads','public');
-            //dd($barang->imgfile);
+            //$barang->imgfile = request()->image->store('uploads','public');
+
         }
         else
         {
@@ -39,12 +44,22 @@ class BarangController extends Controller
 
         $barang->save();
 
-        return view('barang')->with('barang',$barang);
+        return view('barang',['barang'=>$barang]);
     }
 
     public function penjual()
     {
-        $barang = Barang::all();
-        return view('penjual')->with('barang',$barang);
+        $barang = Barang::paginate(10);
+        return view('penjual',['barang'=>$barang]);
     }
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+
+		$barang = Barang::where('productname','like','%'.$cari.'%')->paginate(10);
+
+		return view('penjual',['barang' => $barang]);
+
+	}
 }
