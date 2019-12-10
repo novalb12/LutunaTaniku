@@ -23,7 +23,8 @@ Route::get('/home',function(){
     return view('home');
 })->middleware('auth')->name('home');
 Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');
-Route::get('/barang','BarangController@index')->middleware('auth');
-Route::post('/barang','BarangController@store')->middleware('auth')->name('addbarang');
-Route::get('/penjual','BarangController@penjual');
+Route::get('/input','BarangController@index')->middleware('auth');
+Route::post('/input','BarangController@store')->middleware('auth')->name('addbarang');
+Route::get('/barang','BarangController@penjual');
 Route::get('/barang/cari','BarangController@cari');
+Route::get('/barang/{id}','BarangController@proses')->middleware('auth')->name('catalog');

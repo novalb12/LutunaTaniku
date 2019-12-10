@@ -13,7 +13,7 @@ class BarangController extends Controller
     public function index()
     {
 
-        return view('barang');
+        return view('input');
     }
 
     public function store(Request $request)
@@ -23,6 +23,7 @@ class BarangController extends Controller
         $barang->productname = $request->input('namaproduk');
         $barang->description = $request->input('deskripsi');
         $barang->username = auth()->user()->name;
+        $barang->harga = "Rp. ".$request->input('harga');
 
         if($request->hasfile('image'))
         {
@@ -43,14 +44,14 @@ class BarangController extends Controller
         }
 
         $barang->save();
-
-        return view('barang',['barang'=>$barang]);
+        $barangs = Barang::paginate(10);
+        return view('barang',['barang'=>$barangs]);
     }
 
     public function penjual()
     {
         $barang = Barang::paginate(10);
-        return view('penjual',['barang'=>$barang]);
+        return view('barang',['barang'=>$barang]);
     }
     public function cari(Request $request)
 	{
@@ -58,8 +59,14 @@ class BarangController extends Controller
 		$cari = $request->cari;
 
 		$barang = Barang::where('productname','like','%'.$cari.'%')->paginate(10);
+		return view('barang',['barang' => $barang]);
 
-		return view('penjual',['barang' => $barang]);
+    }
+    public function proses($id)
+    {
+		$barang= Barang::find($id);
+		return view('catalog',['barang' => $barang]);
 
-	}
+    }
+
 }
