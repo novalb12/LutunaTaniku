@@ -86,14 +86,11 @@
                             <span style="font-style:normal;font-weight:normal;">{{$p->harga}}</span></span><br><br>
                             <span style="font-style:normal;font-weight:lighter;">{{$p->description}}</span><br>
                             <span>Kota Bandung</span>
-
                     </div>
                     @endforeach
 
                 </div>
-
-
-
+                <br>
                 {{$barang->links()}}
                 Halaman : {{ $barang->currentPage() }} <br/>
                 Jumlah Data : {{ $barang->total() }} <br/>

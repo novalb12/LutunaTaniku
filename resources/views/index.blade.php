@@ -29,12 +29,12 @@
     <div class="container-fluid peran" style="background-color: #436164">
         <center>
             <div class="row">
-                <div class="col-6">
-                    <img src="{{asset('img/Petani_poster.png')}}"></img></br>
+                <div class="col-6 buyer">
+                    <img src="{{asset('img/buyer.png')}}"></img></br>
                     <a href="{{ route('login') }}"><button>Aku Penjual</button></a>
                 </div>
-                <div class="col-6">
-                    <img src="{{asset('img/Petani_poster.png')}}"></img></br>
+                <div class="col-6 seller">
+                    <img src="{{asset('img/seller.png')}}"></img></br>
                     <a href="{{ route('login') }}"><button>Aku Pembeli</button></a>
                 </div>
             </div>
