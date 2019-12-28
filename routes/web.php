@@ -13,18 +13,16 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 Route::get('/admin','AdminController@index');
 Route::get('/register','AuthController@getRegister')->middleware('guest')->name('register');
 Route::post('/register','AuthController@postRegister')->middleware('guest');
 Route::get('/login','AuthController@getLogin')->middleware('guest')->name('login');
 Route::post('/login','AuthController@postLogin')->middleware('guest');
-Route::get('/home',function(){
-    return view('home');
-})->middleware('auth')->name('home');
 Route::get('/logout','AuthController@logout')->middleware('auth')->name('logout');
-Route::get('/input','BarangController@index')->middleware('auth');
+Route::get('/input','BarangController@index')->middleware('auth')->name('input');
 Route::post('/input','BarangController@store')->middleware('auth')->name('addbarang');
+Route::get('/home','BarangController@penjual')->name('home');
 Route::get('/barang','BarangController@penjual');
 Route::get('/barang/cari','BarangController@cari');
 Route::get('/barang/{id}','BarangController@proses')->middleware('auth')->name('catalog');

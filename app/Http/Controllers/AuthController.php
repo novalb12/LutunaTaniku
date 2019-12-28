@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Barang;
 
 class AuthController extends Controller
 {
@@ -21,8 +22,9 @@ class AuthController extends Controller
          {
              return redirect()->back();
          }
-
-         return redirect()->route('home');
+         $barangs = Barang::paginate(10);
+        return view('barang',['barang'=>$barangs]);
+        // return redirect()->route('home');
     }
     public function getRegister()
     {
@@ -43,8 +45,9 @@ class AuthController extends Controller
 
         //user login
         auth()->loginUsingId($user->id);
-
-        return redirect()->route('home');
+        $barangs = Barang::paginate(10);
+        return view('barang',['barang'=>$barangs]);
+       // return redirect()->route('home');
 
     }
 

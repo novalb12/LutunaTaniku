@@ -12,7 +12,9 @@
         <div class="row">
             <div class="col-1"></div>
             <div class="col-2 toplogo">
+            <a href="{{route('index')}}">
                 <img src="{{asset('img/Logo.png')}}"></img>
+            </a>
             </div>
             <div class="col-5"></div>
             <div class="col-4 searchnav">

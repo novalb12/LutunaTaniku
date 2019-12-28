@@ -2,7 +2,7 @@
 @section('konten')
     <div class="container bgproduk" style="background-color: #47686B">
         <div class="col-12 jProduk">
-            X.XXX Produk
+        {{ $barang->total() }} Produk
         </div>
         <div class="bgproduk row">
             <div class="filter col-3">
@@ -93,7 +93,6 @@
                 <br>
                 {{$barang->links()}}
                 Halaman : {{ $barang->currentPage() }} <br/>
-                Jumlah Data : {{ $barang->total() }} <br/>
                 Data Per Halaman : {{ $barang->perPage() }} <br/>
             </div>
         </div>
